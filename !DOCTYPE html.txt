@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Consultant SAP</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>Votre Nom</h1>
+            <ul>
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#projets">Projets</a></li>
+                <li><a href="#competences">Compétences</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="accueil">
+            <div class="hero">
+                <h2>Consultant SAP</h2>
+                <p class="subtitle">Spécialisé en BW/4HANA et solutions d'analytique</p>
+                <p class="description">
+                    Fort de plusieurs années d'expérience en consulting SAP, 
+                    j'accompagne les entreprises dans leurs projets de transformation 
+                    digitale et d'optimisation des processus métier.
+                </p>
+                <div class="cta-buttons">
+                    <a href="#projets" class="btn-primary">Voir mes projets</a>
+                    <a href="#contact" class="btn-secondary">Me contacter</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="projets">
+            <h2>Missions & Projets</h2>
+            <div class="projects-grid">
+                
+                <div class="project-card">
+                    <h3>Projet 1 - Titre de la mission</h3>
+                    <p class="project-duration">Durée : 6 mois (2024)</p>
+                    <p class="project-description">
+                        Description brève de la mission et des tâches réalisées.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">SAP BW/4HANA</span>
+                        <span class="tech-tag">ABAP</span>
+                        <span class="tech-tag">HANA Studio</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>Projet 2 - Titre de la mission</h3>
+                    <p class="project-duration">Durée : 8 mois (2023-2024)</p>
+                    <p class="project-description">
+                        Description brève de la mission et des tâches réalisées.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">SAP S/4HANA</span>
+                        <span class="tech-tag">Fiori</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>Projet 3 - Titre de la mission</h3>
+                    <p class="project-duration">Durée : 4 mois (2023)</p>
+                    <p class="project-description">
+                        Description brève de la mission et des tâches réalisées.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">SAP BW</span>
+                        <span class="tech-tag">BI</span>
+                        <span class="tech-tag">SAC</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="competences">
+            <h2>Compétences</h2>
+            
+            <div class="skills-container">
+                <div class="skills-category">
+                    <h3>Technologies SAP</h3>
+                    <ul class="skills-list">
+                        <li>SAP BW/4HANA</li>
+                        <li>SAP S/4HANA</li>
+                        <li>SAP HANA Studio</li>
+                        <li>SAP Analytics Cloud (SAC)</li>
+                        <li>ABAP</li>
+                        <li>SAP Fiori</li>
+                    </ul>
+                </div>
+
+                <div class="skills-category">
+                    <h3>Méthodologies & Outils</h3>
+                    <ul class="skills-list">
+                        <li>Modélisation de données</li>
+                        <li>ETL / Data Warehouse</li>
+                        <li>Reporting & BI</li>
+                        <li>Migration de systèmes</li>
+                        <li>Optimisation de performance</li>
+                        <li>Documentation technique</li>
+                    </ul>
+                </div>
+
+                <div class="skills-category">
+                    <h3>Soft Skills</h3>
+                    <ul class="skills-list">
+                        <li>Gestion de projet</li>
+                        <li>Relation client</li>
+                        <li>Formation utilisateurs</li>
+                        <li>Analyse des besoins</li>
+                        <li>Travail en équipe</li>
+                        <li>Autonomie</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Contact</h2>
+            <div class="contact-container">
+                <p class="contact-intro">
+                    Vous avez un projet ou une mission SAP ? N'hésitez pas à me contacter.
+                </p>
+                
+                <form id="contact-form" action="https://formspree.io/f/maqdqewb" method="POST">
+                    <div class="form-group">
+                        <label for="name">Nom</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Sujet</label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="6" required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-submit">Envoyer</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 - Tous droits réservés</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
