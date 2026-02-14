@@ -3,73 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projets - Portfolio SAP</title>
+    <title>Projets - Consultant SAP BW/4HANA</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <h1>Votre Nom</h1>
-            <ul>
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="projets.html">Projets</a></li>
-                <li><a href="competences.html">Compétences</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+    <div class="bg-grid"></div>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    
+    <div id="root"></div>
 
-    <main>
-        <section id="projets">
-            <h2>Missions & Projets</h2>
-            <div class="projects-grid">
-                
-                <div class="project-card">
-                    <h3>Projet 1 - Titre de la mission</h3>
-                    <p class="project-duration">Durée : 6 mois (2024)</p>
-                    <p class="project-description">
-                        Description brève de la mission et des tâches réalisées.
-                    </p>
-                    <div class="project-tech">
-                        <span class="tech-tag">SAP BW/4HANA</span>
-                        <span class="tech-tag">ABAP</span>
-                        <span class="tech-tag">HANA Studio</span>
-                    </div>
-                </div>
+    <script type="text/babel">
+        const { useState } = React;
 
-                <div class="project-card">
-                    <h3>Projet 2 - Titre de la mission</h3>
-                    <p class="project-duration">Durée : 8 mois (2023-2024)</p>
-                    <p class="project-description">
-                        Description brève de la mission et des tâches réalisées.
-                    </p>
-                    <div class="project-tech">
-                        <span class="tech-tag">SAP S/4HANA</span>
-                        <span class="tech-tag">Fiori</span>
-                    </div>
-                </div>
+        function ProjectsPage() {
+            const [theme, setTheme] = useState('dark');
+            const toggleTheme = () => setTheme(theme === 'dark' ? 'light' : 'dark');
 
-                <div class="project-card">
-                    <h3>Projet 3 - Titre de la mission</h3>
-                    <p class="project-duration">Durée : 4 mois (2023)</p>
-                    <p class="project-description">
-                        Description brève de la mission et des tâches réalisées.
-                    </p>
-                    <div class="project-tech">
-                        <span class="tech-tag">SAP BW</span>
-                        <span class="tech-tag">BI</span>
-                        <span class="tech-tag">SAC</span>
-                    </div>
-                </div>
+            const projects = [
+                {
+                    title: "Migration BW vers BW/4HANA",
+                    year: "2024",
+                    desc: "Pilotage de la migration technique et fonctionnelle pour un client du secteur Retail. Optimisation des flux de données et réduction des temps de chargement de 40%.",
+                    tech: ["SAP BW/4HANA", "ABAP", "HANA Studio"]
+                },
+                {
+                    title: "Implémentation S/4HANA Finance",
+                    year: "2023",
+                    desc: "Mise en place des modules analytiques pour la direction financière. Création de tableaux de bord Fiori et reporting temps réel via CDS Views.",
+                    tech: ["S/4HANA", "Fiori", "CDS Views", "Embedded Analytics"]
+                },
+                {
+                    title: "Tableaux de bord SAC",
+                    year: "2023",
+                    desc: "Conception et déploiement de stories SAP Analytics Cloud pour le suivi des KPI Logistique. Connexion Live Data avec BW/4HANA.",
+                    tech: ["SAP Analytics Cloud", "Data Modelling", "UX Design"]
+                }
+            ];
 
-            </div>
-        </section>
-    </main>
+            return (
+                <>
+                    <nav>
+                        <div className="nav-container">
+                            <a href="index.html" className="logo">SAP.EXPERT</a>
+                            <ul className="nav-links">
+                                <li><a href="index.html">Accueil</a></li>
+                                <li><a href="projets.html" className="active">Projets</a></li>
+                                <li><a href="competences.html">Compétences</a></li>
+                                <li><a href="contact.html">Contact</a></li>
+                            </ul>
+                            <button className="theme-toggle" onClick={toggleTheme}>
+                                {theme === 'dark' ? '☀️' : '🌙'} Mode
+                            </button>
+                        </div>
+                    </nav>
 
-    <footer>
-        <p>&copy; 2025 - Tous droits réservés</p>
-    </footer>
+                    <main>
+                        <div className="page-header">
+                            <h1>Missions & Réalisations</h1>
+                            <p>Une sélection de mes interventions techniques et projets de transformation SAP.</p>
+                        </div>
 
-    <script src="js/main.js"></script>
+                        <div className="projects-grid">
+                            {projects.map((project, index) => (
+                                <div className="project-card" key={index} style={{animationDelay: `${index * 0.1}s`}}>
+                                    <div className="project-year">{project.year}</div>
+                                    <h3>{project.title}</h3>
+                                    <p className="project-desc">{project.desc}</p>
+                                    <div className="tech-stack">
+                                        {project.tech.map((tag, i) => (
+                                            <span className="tech-tag" key={i}>{tag}</span>
+                                        ))}
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </main>
+
+                    <footer><p>&copy; 2025 - Tous droits réservés</p></footer>
+                </>
+            );
+        }
+
+        ReactDOM.render(<ProjectsPage />, document.getElementById('root'));
+    </script>
 </body>
 </html>

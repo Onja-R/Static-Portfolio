@@ -40,7 +40,7 @@ Portfolio statique développé en HTML5, CSS3 et JavaScript vanilla. Design mode
 
 1. Cloner le dépôt :
 ```bash
-git clone https://github.com/votre-nom-utilisateur/nom-du-depot.git
+git clone https://github.com/Onja-R/Static-Portfolio.git
 ```
 
 2. Ouvrir `index.html` dans un navigateur
@@ -52,7 +52,7 @@ git clone https://github.com/votre-nom-utilisateur/nom-du-depot.git
 3. Branch : main + /root
 4. Sauvegarder
 
-Le site sera accessible à l'adresse : `https://votre-nom-utilisateur.github.io/nom-du-depot/`
+Le site sera accessible à l'adresse : `https://onja-r.github.io/Static-Portfolio/`
 
 ## Personnalisation
 

@@ -3,70 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Compétences - Portfolio SAP</title>
+    <title>Compétences - Consultant SAP BW/4HANA</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <h1>Votre Nom</h1>
-            <ul>
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="projets.html">Projets</a></li>
-                <li><a href="competences.html">Compétences</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+    <div class="bg-grid"></div>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    
+    <div id="root"></div>
 
-    <main>
-        <section id="competences">
-            <h2>Compétences</h2>
-            
-            <div class="skills-container">
-                <div class="skills-category">
-                    <h3>Technologies SAP</h3>
-                    <ul class="skills-list">
-                        <li>SAP BW/4HANA</li>
-                        <li>SAP S/4HANA</li>
-                        <li>SAP HANA Studio</li>
-                        <li>SAP Analytics Cloud (SAC)</li>
-                        <li>ABAP</li>
-                        <li>SAP Fiori</li>
-                    </ul>
-                </div>
+    <script type="text/babel">
+        const { useState } = React;
 
-                <div class="skills-category">
-                    <h3>Méthodologies & Outils</h3>
-                    <ul class="skills-list">
-                        <li>Modélisation de données</li>
-                        <li>ETL / Data Warehouse</li>
-                        <li>Reporting & BI</li>
-                        <li>Migration de systèmes</li>
-                        <li>Optimisation de performance</li>
-                        <li>Documentation technique</li>
-                    </ul>
-                </div>
+        function SkillsPage() {
+            const [theme, setTheme] = useState('dark');
+            const toggleTheme = () => setTheme(theme === 'dark' ? 'light' : 'dark');
 
-                <div class="skills-category">
-                    <h3>Soft Skills</h3>
-                    <ul class="skills-list">
-                        <li>Gestion de projet</li>
-                        <li>Relation client</li>
-                        <li>Formation utilisateurs</li>
-                        <li>Analyse des besoins</li>
-                        <li>Travail en équipe</li>
-                        <li>Autonomie</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-    </main>
+            return (
+                <>
+                    <nav>
+                        <div className="nav-container">
+                            <a href="index.html" className="logo">SAP.EXPERT</a>
+                            <ul className="nav-links">
+                                <li><a href="index.html">Accueil</a></li>
+                                <li><a href="projets.html">Projets</a></li>
+                                <li><a href="competences.html" className="active">Compétences</a></li>
+                                <li><a href="contact.html">Contact</a></li>
+                            </ul>
+                            <button className="theme-toggle" onClick={toggleTheme}>
+                                {theme === 'dark' ? '☀️' : '🌙'} Mode
+                            </button>
+                        </div>
+                    </nav>
 
-    <footer>
-        <p>&copy; 2025 - Tous droits réservés</p>
-    </footer>
+                    <main>
+                        <div className="page-header">
+                            <h1>Expertise Technique</h1>
+                            <p>Maîtrise de l'écosystème SAP et des solutions décisionnelles.</p>
+                        </div>
 
-    <script src="js/main.js"></script>
+                        <div className="skills-container">
+                            <div className="skill-category" style={{animationDelay: '0.1s'}}>
+                                <h3>💎 Technologies SAP</h3>
+                                <ul className="skill-list">
+                                    <li className="skill-item"><span>SAP BW/4HANA</span> <span>Expert</span></li>
+                                    <li className="skill-item"><span>SAP S/4HANA Embedded</span> <span>Avancé</span></li>
+                                    <li className="skill-item"><span>HANA Studio / Eclipse</span> <span>Expert</span></li>
+                                    <li className="skill-item"><span>SAP Analytics Cloud (SAC)</span> <span>Intermédiaire</span></li>
+                                    <li className="skill-item"><span>ABAP OO & CDS Views</span> <span>Avancé</span></li>
+                                </ul>
+                            </div>
+
+                            <div className="skill-category" style={{animationDelay: '0.2s'}}>
+                                <h3>⚙️ Méthodologies & Outils</h3>
+                                <ul className="skill-list">
+                                    <li className="skill-item"><span>Data Modeling (LSA++)</span></li>
+                                    <li className="skill-item"><span>ETL & Data Warehousing</span></li>
+                                    <li className="skill-item"><span>Query Designer / BEx</span></li>
+                                    <li className="skill-item"><span>Migration BW 7.x vers 4HANA</span></li>
+                                    <li className="skill-item"><span>Performance Tuning</span></li>
+                                </ul>
+                            </div>
+
+                            <div className="skill-category" style={{animationDelay: '0.3s'}}>
+                                <h3>🤝 Soft Skills</h3>
+                                <ul className="skill-list">
+                                    <li className="skill-item"><span>Gestion de projet Agile</span></li>
+                                    <li className="skill-item"><span>Animation d'ateliers</span></li>
+                                    <li className="skill-item"><span>Rédaction technique</span></li>
+                                    <li className="skill-item"><span>Formation utilisateurs</span></li>
+                                    <li className="skill-item"><span>Esprit d'analyse</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </main>
+
+                    <footer><p>&copy; 2025 - Tous droits réservés</p></footer>
+                </>
+            );
+        }
+
+        ReactDOM.render(<SkillsPage />, document.getElementById('root'));
+    </script>
 </body>
 </html>
