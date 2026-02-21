@@ -24,6 +24,8 @@
             const [theme, setTheme] = useState('dark');
             const toggleTheme = () => setTheme(theme === 'dark' ? 'light' : 'dark');
 
+            const currentYear = new Date().getFullYear();
+
             return (
                 <>
                     <nav>
@@ -49,29 +51,29 @@
 
                         <div className="skills-container">
                             <div className="skill-category" style={{animationDelay: '0.1s'}}>
-                                <h3>💎 Technologies SAP</h3>
+                                <h3>Technologies SAP</h3>
                                 <ul className="skill-list">
-                                    <li className="skill-item"><span>SAP BW/4HANA</span> <span>Expert</span></li>
-                                    <li className="skill-item"><span>SAP S/4HANA Embedded</span> <span>Avancé</span></li>
-                                    <li className="skill-item"><span>HANA Studio / Eclipse</span> <span>Expert</span></li>
-                                    <li className="skill-item"><span>SAP Analytics Cloud (SAC)</span> <span>Intermédiaire</span></li>
-                                    <li className="skill-item"><span>ABAP OO & CDS Views</span> <span>Avancé</span></li>
+                                    <li className="skill-item"><span>SAP BW/4HANA</span> <span>Avancé</span></li>
+                                    <li className="skill-item"><span>SQL HANA</span> <span>Avancé</span></li>
+                                    <li className="skill-item"><span>SAP S/4HANA</span> <span>Intermédiaire</span></li>
+                                    <li className="skill-item"><span>SAP BusinessObjects</span> <span>Intermédiaire</span></li>
+                                    <li className="skill-item"><span>CDS Views</span> <span>Intermédiaire</span></li>
                                 </ul>
                             </div>
 
                             <div className="skill-category" style={{animationDelay: '0.2s'}}>
-                                <h3>⚙️ Méthodologies & Outils</h3>
+                                <h3>Méthodologies & Outils</h3>
                                 <ul className="skill-list">
                                     <li className="skill-item"><span>Data Modeling (LSA++)</span></li>
                                     <li className="skill-item"><span>ETL & Data Warehousing</span></li>
                                     <li className="skill-item"><span>Query Designer / BEx</span></li>
-                                    <li className="skill-item"><span>Migration BW 7.x vers 4HANA</span></li>
                                     <li className="skill-item"><span>Performance Tuning</span></li>
+                                    <li className="skill-item"><span>Analyses des données</span></li>
                                 </ul>
                             </div>
 
                             <div className="skill-category" style={{animationDelay: '0.3s'}}>
-                                <h3>🤝 Soft Skills</h3>
+                                <h3>Soft Skills</h3>
                                 <ul className="skill-list">
                                     <li className="skill-item"><span>Gestion de projet Agile</span></li>
                                     <li className="skill-item"><span>Animation d'ateliers</span></li>
@@ -83,7 +85,9 @@
                         </div>
                     </main>
 
-                    <footer><p>&copy; 2025 - Tous droits réservés</p></footer>
+                    <footer>
+                        <p>&copy; {currentYear} - Tous droits réservés</p>
+                    </footer>
                 </>
             );
         }

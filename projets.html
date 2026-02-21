@@ -24,24 +24,26 @@
             const [theme, setTheme] = useState('dark');
             const toggleTheme = () => setTheme(theme === 'dark' ? 'light' : 'dark');
 
+            const currentYear = new Date().getFullYear();
+
             const projects = [
                 {
-                    title: "Migration BW vers BW/4HANA",
-                    year: "2024",
-                    desc: "Pilotage de la migration technique et fonctionnelle pour un client du secteur Retail. Optimisation des flux de données et réduction des temps de chargement de 40%.",
-                    tech: ["SAP BW/4HANA", "ABAP", "HANA Studio"]
+                    title: "Support et développement sur SAP BW/4HANA",
+                    year: "2025-",
+                    desc: "Conception et mise en œuvre de nouveaux flux de données pour répondre aux besoins spécifiques des utilisateurs et aux exigences métiers. Réduction significative des temps de chargement, permettant d'atteindre une amélioration jusqu'a 80% en termes de performance.",
+                    tech: ["SAP BW/4HANA", "SQL", "SAP BuinessObjects", "Data Warehousing"]
                 },
                 {
-                    title: "Implémentation S/4HANA Finance",
-                    year: "2023",
-                    desc: "Mise en place des modules analytiques pour la direction financière. Création de tableaux de bord Fiori et reporting temps réel via CDS Views.",
-                    tech: ["S/4HANA", "Fiori", "CDS Views", "Embedded Analytics"]
+                    title: "Support et développement sur SAP BW on HANA",
+                    year: "2021-24",
+                    desc: "Mise en place des modules analytiques pour differents clients. Création de tableaux de bord avec Analysis for Office et Power BI.",
+                    tech: ["SAP BW on HANA", "Calculation Views", "Power BI", "ABAP"]
                 },
                 {
-                    title: "Tableaux de bord SAC",
-                    year: "2023",
-                    desc: "Conception et déploiement de stories SAP Analytics Cloud pour le suivi des KPI Logistique. Connexion Live Data avec BW/4HANA.",
-                    tech: ["SAP Analytics Cloud", "Data Modelling", "UX Design"]
+                    title: "Analytics et Reporting sur Power BI et Excel",
+                    year: "2019-20",
+                    desc: "Conception et déploiement de tableaux de bord pour le suivi des KPI sur la performance des avions ATR.",
+                    tech: ["Machine Learning", "Data Modelling", "Power BI", "Excel VBA"]
                 }
             ];
 
@@ -84,7 +86,9 @@
                         </div>
                     </main>
 
-                    <footer><p>&copy; 2025 - Tous droits réservés</p></footer>
+                    <footer>
+                        <p>&copy; {currentYear} - Tous droits réservés</p>
+                    </footer>
                 </>
             );
         }
