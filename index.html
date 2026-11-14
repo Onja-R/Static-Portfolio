@@ -3,96 +3,266 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Consultant SAP BW/4HANA</title>
-    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <title>BI — Data architect | SAP BW & MS Fabric</title>
+    <meta name="description" content="Data architect spécialisé SAP BW/4HANA et Microsoft Fabric. Data engineering et reporting.">
+    <link rel="preload" href="assets/fonts/SpaceGrotesk/SpaceGrotesk[wght].woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="bg-grid"></div>
-    <div class="orb orb-1"></div>
-    <div class="orb orb-2"></div>
-    
-    <div id="root"></div>
 
-    <script type="text/babel">
-        const { useState } = React;
+    <nav>
+        <div class="container nav-inner">
+            <a href="#top" class="logo mono">BI.</a>
+            <ul class="nav-links">
+                <li><a href="#about">À propos.</a></li>
+                <li><a href="#skills">Compétences.</a></li>
+                <li><a href="#works">Projets.</a></li>
+                <li><a href="#contact">Contact.</a></li>
+            </ul>
+            <button class="theme-toggle mono" id="themeToggle" aria-label="Changer de thème">dark</button>
+        </div>
+    </nav>
 
-        function App() {
-            const [theme, setTheme] = useState('dark');
-            const toggleTheme = () => setTheme(theme === 'dark' ? 'light' : 'dark');
+    <header class="hero" id="top">
+        <div class="container">
+            <p class="hero-intro mono">Bonjour, je suis BI.</p>
+            <h1 class="hero-title">
+                data<span class="accent">+</span>&#8201;architect<br>
+                SAP BW<span class="accent">+</span> MS Fabric<br>
+                engineering<span class="accent">+</span> reporting
+            </h1>
+            <p class="hero-sub">
+                Je conçois des plateformes data et du reporting fiable,
+                de SAP BW/4HANA à Microsoft Fabric.
+            </p>
+            <div class="hero-meta mono">
+                <a href="mailto:contact@example.com">contact@example.com</a>
+                <span aria-hidden="true">/</span>
+                <a href="#contact">Disponible pour de nouvelles missions</a>
+            </div>
+            <a href="#works" class="hero-cta mono">Voir mes projets ↓</a>
+        </div>
+    </header>
 
-            return (
-                <>
-                    <nav>
-                        <div className="nav-container">
-                            <a href="index.html" className="logo">SAP.EXPERT</a>
-                            <ul className="nav-links">
-                                <li><a href="index.html" className="active">Accueil</a></li>
-                                <li><a href="projets.html">Projets</a></li>
-                                <li><a href="competences.html">Compétences</a></li>
-                                <li><a href="contact.html">Contact</a></li>
-                            </ul>
-                            <button className="theme-toggle" onClick={toggleTheme}>
-                                {theme === 'dark' ? '☀️' : '🌙'} Mode
-                            </button>
-                        </div>
-                    </nav>
+    <section id="about">
+        <div class="container">
+            <p class="section-label mono">01 / À propos</p>
+            <h2>De l'analyse de données<br>à l'architecture data.</h2>
 
-                    <section className="hero" id="accueil">
-                        <div className="hero-content">
-                            <div className="hero-badge">Disponible pour nouvelles missions</div>
-                            <h1>Consultant SAP BW/BI</h1>
-                            <p className="hero-subtitle">
-                                Expert en transformation digitale et solutions analytiques. 
-                                Je transforme vos données en décisions stratégiques avec SAP BW/4HANA.
-                            </p>
-                            <div className="cta-buttons">
-                                <a href="projets.html" className="btn btn-primary">Voir mes projets →</a>
-                                <a href="contact.html" className="btn btn-secondary">Me contacter</a>
-                            </div>
-                        </div>
-                    </section>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>
+                        Diplômé d'une licence en ingénierie des systèmes à l'Université de
+                        Bordeaux en 2020, j'ai commencé mon parcours chez Thales en tant que
+                        Data Analyst, où j'ai développé mes premières compétences dans
+                        l'analyse et la valorisation des données.
+                    </p>
+                    <p>
+                        J'ai ensuite rejoint Capgemini en 2021 comme consultant SAP BW, une
+                        expérience de trois ans qui m'a permis d'approfondir mon expertise en
+                        architecture et solutions décisionnelles SAP. En 2025, j'ai rejoint
+                        KPMG comme SAP Data Architect, avec un rôle axé sur la conception et
+                        l'évolution des architectures data, notamment autour de SAP BW/4HANA
+                        et Microsoft Fabric.
+                    </p>
+                    <p>
+                        Au fil de mon parcours, j'ai progressivement évolué de l'analyse de
+                        données vers la conception d'architectures data, en accompagnant les
+                        organisations dans leurs transformations et leurs enjeux liés à la
+                        donnée. Je travaille aussi bien en français qu'en anglais.
+                    </p>
+                </div>
 
-                    <section className="cards-section">
-                        <div className="cards-grid">
-                            <div className="card">
-                                <div className="card-icon">📊</div>
-                                <h3>Projets</h3>
-                                <p>Découvrez mes missions SAP et réalisations en BW/4HANA, S/4HANA et solutions analytiques.</p>
-                                <a href="projets.html" className="card-link">Explorer →</a>
-                            </div>
+                <aside class="about-timeline mono" aria-label="Parcours">
+                    <div class="tl-item">
+                        <span class="tl-year">2025</span>
+                        <span class="tl-role">SAP Data Architect — KPMG</span>
+                    </div>
+                    <div class="tl-item">
+                        <span class="tl-year">2021</span>
+                        <span class="tl-role">Consultant SAP BW — Capgemini</span>
+                    </div>
+                    <div class="tl-item">
+                        <span class="tl-year">2020</span>
+                        <span class="tl-role">Data Analyst — Thales</span>
+                    </div>
+                    <div class="tl-item">
+                        <span class="tl-year">2020</span>
+                        <span class="tl-role">B.Sc. en ingénierie des systèmes — Univ. Bordeaux</span>
+                    </div>
+                    <div class="tl-item">
+                        <span class="tl-year">FR/EN</span>
+                        <span class="tl-role">Langues de travail</span>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
 
-                            <div className="card">
-                                <div className="card-icon">⚡</div>
-                                <h3>Compétences</h3>
-                                <p>Technologies SAP, méthodologies et expertises techniques en data warehousing et BI.</p>
-                                <a href="competences.html" className="card-link">Découvrir →</a>
-                            </div>
+    <section id="skills">
+        <div class="container">
+            <p class="section-label mono">02 / Compétences</p>
+            <h2>Ce que je pratique.</h2>
 
-                            <div className="card">
-                                <div className="card-icon">💬</div>
-                                <h3>Contact</h3>
-                                <p>Un projet SAP en vue ? Discutons de vos besoins et de vos objectifs business.</p>
-                                <a href="contact.html" className="card-link">Échanger →</a>
-                            </div>
-                        </div>
-                    </section>
+            <div class="skills-grid">
+                <div class="skill-group">
+                    <h3 class="mono">SAP</h3>
+                    <ul class="tag-list">
+                        <li>BW/4HANA <span class="tag-detail">ADSO, CompositeProvider, transformations, AMDP</span></li>
+                        <li>SAP HANA <span class="tag-detail">SQL, SQLScript, administration de base</span></li>
+                        <li>S/4HANA &amp; ECC <span class="tag-detail">systèmes sources : extracteurs, vues CDS</span></li>
+                        <li>SAP BusinessObjects <span class="tag-detail">Web Intelligence, univers IDT, administration CMC</span></li>
+                    </ul>
+                </div>
 
-                    <section className="stats-section">
-                        <div className="stats-grid">
-                            <div className="stat"><div className="stat-number">5+</div><div className="stat-label">Années d'expérience</div></div>
-                            <div className="stat"><div className="stat-number">10+</div><div className="stat-label">Projets réalisés</div></div>
-                            <div className="stat"><div className="stat-number">15+</div><div className="stat-label">Clients satisfaits</div></div>
-                            <div className="stat"><div className="stat-number">100%</div><div className="stat-label">Missions réussies</div></div>
-                        </div>
-                    </section>
-                </>
-            );
-        }
+                <div class="skill-group">
+                    <h3 class="mono">Microsoft</h3>
+                    <ul class="tag-list">
+                        <li>Fabric Data Factory <span class="tag-detail">lakehouse, warehouse, architecture médaillon, pipelines</span></li>
+                        <li>Power BI</li>
+                        <li>SQL Server</li>
+                    </ul>
+                </div>
 
-        ReactDOM.render(<App />, document.getElementById('root'));
-    </script>
+                <div class="skill-group">
+                    <h3 class="mono">Transverse</h3>
+                    <ul class="tag-list">
+                        <li>Architecture data</li>
+                        <li>Data engineering</li>
+                        <li>Reporting</li>
+                        <li>Français / Anglais</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="works">
+        <div class="container">
+            <p class="section-label mono">03 / Projets</p>
+            <h2>Projets sélectionnés.</h2>
+
+            <div class="works-list">
+
+                <article class="work">
+                    <div class="work-head">
+                        <span class="work-num mono">01</span>
+                        <h3>Analyse de données aéronautiques &amp; maintenance prédictive</h3>
+                        <p class="work-client mono">Secteur aéronautique — données anonymisées</p>
+                    </div>
+                    <p class="work-desc">
+                        Exploration, nettoyage et transformation de données issues de systèmes
+                        aéronautiques pour concevoir un modèle de données au service de la
+                        maintenance prédictive : indicateurs, tableaux de bord et rapports
+                        analytiques pour la prise de décision.
+                    </p>
+                    <ul class="work-tags mono">
+                        <li>Power BI</li><li>Power Query</li><li>Python</li><li>Excel</li>
+                    </ul>
+                </article>
+
+                <article class="work">
+                    <div class="work-head">
+                        <span class="work-num mono">02</span>
+                        <h3>Maintenance applicative SAP BW &amp; Data Warehouse</h3>
+                        <p class="work-client mono">Grand groupe industriel français du CAC 40</p>
+                    </div>
+                    <p class="work-desc">
+                        Maintenance corrective et évolutive du Data Warehouse : optimisation des
+                        flux d'alimentation et des modèles de données, résolution d'incidents,
+                        accompagnement du reporting avec Analysis for Office et Power BI,
+                        support aux utilisateurs.
+                    </p>
+                    <ul class="work-tags mono">
+                        <li>SAP BW on HANA</li><li>SAP BW 7.5</li><li>Analysis for Office</li><li>Power BI</li>
+                    </ul>
+                </article>
+
+                <article class="work">
+                    <div class="work-head">
+                        <span class="work-num mono">03</span>
+                        <h3>Data Warehouse SAP BW/4HANA : maintenance &amp; évolutions</h3>
+                        <p class="work-client mono">Architecture &amp; data engineering</p>
+                    </div>
+                    <p class="work-desc">
+                        Gestion des flux d'intégration, modélisation des objets décisionnels,
+                        administration des environnements SAP HANA, maintenance des rapports
+                        SAP BusinessObjects et contrôle de la qualité et de la cohérence des
+                        données.
+                    </p>
+                    <ul class="work-tags mono">
+                        <li>SAP BW/4HANA</li><li>SAP HANA</li><li>SAP BusinessObjects</li>
+                    </ul>
+                </article>
+
+                <article class="work">
+                    <div class="work-head">
+                        <span class="work-num mono">04</span>
+                        <h3>Data Warehouse Microsoft Fabric : maintenance &amp; évolutions</h3>
+                        <p class="work-client mono">Architecture &amp; data engineering</p>
+                    </div>
+                    <p class="work-desc">
+                        Conception de l'architecture et développement des pipelines ETL/ELT avec
+                        Fabric Data Factory : intégration multi-sources, structuration dans
+                        Azure SQL, modèles analytiques et jeux de données pour le reporting
+                        Power BI, avec contrôles de qualité.
+                    </p>
+                    <ul class="work-tags mono">
+                        <li>Microsoft Fabric</li><li>Fabric Data Factory</li><li>Azure SQL</li><li>Power BI</li>
+                    </ul>
+                </article>
+
+            </div>
+        </div>
+    </section>
+    <section id="contact">
+        <div class="container">
+            <p class="section-label mono">04 / Contact</p>
+            <h2>Un projet data ?<br>Parlons-en.</h2>
+
+            <div class="contact-grid">
+                <div class="contact-side">
+                    <p class="contact-blurb">
+                        Disponible pour de nouvelles missions, en français ou en anglais,
+                        sur site ou à distance.
+                    </p>
+                    <div class="contact-links mono">
+                        <a href="mailto:contact@example.com">contact@example.com</a>
+                        <a href="tel:+33600000000">+33 6 00 00 00 00</a>
+                    </div>
+                </div>
+
+                <form id="contactForm" class="contact-form" novalidate>
+                    <div class="form-row">
+                        <label>Nom
+                            <input type="text" name="name" required autocomplete="name">
+                        </label>
+                        <label>Email
+                            <input type="email" name="email" required autocomplete="email">
+                        </label>
+                    </div>
+                    <label>Sujet
+                        <input type="text" name="subject" required>
+                    </label>
+                    <label>Message
+                        <textarea name="message" rows="6" required></textarea>
+                    </label>
+                    <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+                    <button type="submit" class="btn-submit mono" id="submitBtn">Envoyer →</button>
+                    <p class="form-status mono" id="formStatus" role="status"></p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-inner mono">
+            <span>© <span id="year"></span> BI</span>
+            <a href="#top">Retour en haut ↑</a>
+        </div>
+    </footer>
+    <!-- sections contact come next -->
+
+    <script src="js/main.js" defer></script>
 </body>
 </html>
