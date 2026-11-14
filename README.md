@@ -1,4 +1,4 @@
-# Portfolio SAP - Consultant BW/4HANA
+# Portfolio Data Architect SAP
 
 Site web portfolio professionnel pour consultant SAP, spécialisé en BW/4HANA et solutions d'analytique.
 
@@ -19,6 +19,17 @@ Portfolio statique développé en HTML5, CSS3 et JavaScript vanilla. Design mode
 - CSS3 (Variables CSS, Grid, Flexbox)
 - JavaScript vanilla
 - Formspree pour le formulaire de contact
+- Polices WOFF2 hébergées localement
+
+## Polices
+
+Les polices sont chargées depuis `assets/fonts/`, sans requête vers Google Fonts :
+
+- Space Grotesk : `assets/fonts/SpaceGrotesk/SpaceGrotesk[wght].woff2`
+- Inter : `assets/fonts/Inter/InterVariable.woff2`
+- IBM Plex Mono : `assets/fonts/IBMPlexMono/IBMPlexMono[wght].woff2`
+
+Leurs déclarations `@font-face` et les familles de polices utilisées par le site sont définies dans `css/style.css`.
 
 ## Structure du projet
 
@@ -28,6 +39,11 @@ Portfolio statique développé en HTML5, CSS3 et JavaScript vanilla. Design mode
 ├── projets.html
 ├── competences.html
 ├── contact.html
+├── assets/
+│   └── fonts/
+│       ├── IBMPlexMono/
+│       ├── Inter/
+│       └── SpaceGrotesk/
 ├── css/
 │   └── style.css
 ├── js/
@@ -81,8 +97,8 @@ Le site sera accessible à l'adresse : `https://onja-r.github.io/Static-Portfoli
 
 ## Licence
 
-Tous droits réservés © 2025
+Tous droits réservés © 2026
 
 ## Contact
 
-Pour toute question ou collaboration : [Formulaire de contact](contact.html)
+Pour toute question ou collaboration : [Formulaire de contact]

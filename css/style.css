@@ -17,8 +17,8 @@
   font-display: swap;
 }
 @font-face {
-	font-family: 'JetBrains Mono';
-  src: url('../assets/fonts/GeistMono/GeistMono[wght].woff2') format('woff2');
+	font-family: 'IBM Plex Mono';
+  src: url('../assets/fonts/IBMPlexMono/IBMPlexMono[wght].woff2') format('woff2');
   font-weight: 100 800;
   font-display: swap;
 }
@@ -86,7 +86,7 @@
 /* --- Design tokens --- */
 :root {
   /* Dark (default) */
-  --bg: #0b0e13;
+  --bg: #000000;
   --bg-raised: #12161d;
   --text: #e8eaf0;
   --text-muted: #8a93a5;
@@ -97,7 +97,7 @@
   /* Typography */
   --font-display: 'Space Grotesk', 'Segoe UI', sans-serif;
   --font-body: 'Inter', 'Segoe UI', sans-serif;
-  --font-mono: 'JetBrains Mono', 'Consolas', monospace;
+  --font-mono: 'IBM Plex Mono', 'Consolas', monospace;
 
   /* Scale */
   --step-hero: clamp(2.8rem, 9vw, 6rem);
@@ -290,7 +290,7 @@ section h2 { font-size: var(--step-h2); font-weight: 600; letter-spacing: -0.02e
   font-size: var(--step-small); color: var(--text-muted);
 }
 .contact-form input, .contact-form textarea {
-  background: var(--bg-raised);
+  background: var(--bg);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   color: var(--text);
