@@ -27,7 +27,7 @@ Les polices sont chargées depuis `assets/fonts/`, sans requête vers Google Fon
 
 - Space Grotesk : `assets/fonts/SpaceGrotesk/SpaceGrotesk[wght].woff2`
 - Inter : `assets/fonts/Inter/InterVariable.woff2`
-- IBM Plex Mono : `assets/fonts/IBMPlexMono/IBMPlexMono[wght].woff2`
+- Space Mono : `assets/fonts/SpaceMono/SpaceMono[wght].woff2`
 
 Leurs déclarations `@font-face` et les familles de polices utilisées par le site sont définies dans `css/style.css`.
 
