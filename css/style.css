@@ -277,6 +277,8 @@ section h2 { font-size: var(--step-h2); font-weight: 600; letter-spacing: -0.02e
 .form-status.ok { color: var(--accent); }
 .form-status.err { color: #e5484d; }
 
+.form-privacy { color: var(--text-muted); font-size: 0.75rem; margin-top: 2rem; }
+
 /* --- Footer --- */
 footer { border-top: 1px solid var(--border); padding-block: 1.5rem; margin-top: var(--space-section); }
 .footer-inner { display: flex; justify-content: space-between; color: var(--text-muted); }

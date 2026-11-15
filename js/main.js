@@ -30,7 +30,7 @@ form.addEventListener('submit', async (e) => {
   statusEl.className = 'form-status mono';
 
   try {
-    const response = await fetch('https://formspree.io/f/maqdqewb', {
+    const response = await fetch('https://forms.formward.eu/f/efd8bdb5-e7dd-49a5-a8f3-16bf5bed7db8', {
       method: 'POST',
       headers: { 'Accept': 'application/json' },
       body: new FormData(form)
