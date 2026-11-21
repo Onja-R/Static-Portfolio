@@ -4,22 +4,28 @@ Site web portfolio professionnel pour consultant SAP, spécialisé en BW/4HANA e
 
 ## Description
 
-Portfolio statique développé en HTML5, CSS3 et JavaScript vanilla. Design moderne avec thème sombre et navigation responsive.
+Portfolio statique développé en HTML5, CSS3 et JavaScript vanilla. Design moderne avec thème sombre, navigation responsive, curseur personnalisé et animations au défilement.
 
 ## Sections
 
 - **Accueil** : Présentation minimaliste
-- **Projets** : Missions et réalisations SAP
+- **Projets** : Missions et réalisations SAP, présentées avec des panneaux animés
 - **Compétences** : Technologies et expertises
-- **Contact** : Formulaire de contact (intégration Formspree)
+- **Contact** : Formulaire de contact (intégration Formward)
 
 ## Technologies utilisées
 
 - HTML5
 - CSS3 (Variables CSS, Grid, Flexbox)
 - JavaScript vanilla
-- Formspree pour le formulaire de contact
+- GSAP et ScrollTrigger pour les animations et panneaux au défilement
+- Formward pour le formulaire de contact
 - Polices WOFF2 hébergées localement
+
+Les scripts JavaScript sont séparés selon leur responsabilité :
+
+- `js/main.js` : thème, année du pied de page, formulaire de contact et curseur personnalisé
+- `js/gsap.js` : animations GSAP et comportements ScrollTrigger
 
 ## Polices
 
@@ -47,7 +53,8 @@ Leurs déclarations `@font-face` et les familles de polices utilisées par le si
 ├── css/
 │   └── style.css
 ├── js/
-│   └── main.js
+│   ├── main.js
+│   └── gsap.js
 ├── images/
 └── README.md
 ```
@@ -74,10 +81,10 @@ Le site sera accessible à l'adresse : `https://onja-r.github.io/Static-Portfoli
 
 ### Modifier les informations personnelles
 
-1. Remplacer "Votre Nom" dans tous les fichiers HTML
-2. Mettre à jour les projets dans `projets.html`
-3. Ajuster les compétences dans `competences.html`
-4. Configurer le formulaire de contact avec votre propre endpoint Formspree
+1. Modifier les informations personnelles dans `index.html`
+2. Mettre à jour les projets dans la section `03 / Projets`
+3. Ajuster les compétences dans la section `02 / À propos`
+4. Configurer le formulaire de contact avec votre propre endpoint Formward dans `js/main.js`
 
 ### Modifier les couleurs
 

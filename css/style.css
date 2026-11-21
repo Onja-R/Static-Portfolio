@@ -199,29 +199,65 @@ section h2 { font-size: var(--step-h2); font-weight: 600; letter-spacing: -0.02e
   .skills-grid { grid-template-columns: 1fr; gap: 2.5rem; }
 }
 
-/* --- Works --- */
-.works-list { display: grid; gap: 0; }
+/* --- Works: full-screen stacked panels (pinned by GSAP in main.js) --- */
+#works { background: var(--bg); padding-bottom: 0; }
+#works > .container { margin-bottom: 1rem; }
+
 .work {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: var(--bg);
   border-top: 1px solid var(--border);
-  padding-block: 2.5rem;
+  box-shadow: 0 -24px 48px -24px rgb(0 0 0 / 0.45);
+}
+
+.work-inner {
+  position: relative;
+  width: 100%;
+  padding-block: 6rem 4rem; /* clears the sticky nav */
   display: grid;
   grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-  gap: 1rem 3rem;
+  gap: 1.5rem 3rem;
+  align-items: end;
+  transform-origin: 50% 0%;
 }
-.work:last-child { border-bottom: 1px solid var(--border); }
+
+.work-bignum {
+  position: absolute;
+  top: 50%; right: 1.5rem;
+  margin-top: -0.5em; /* centers (line-height 1) without using transform, which GSAP animates */
+  font-size: clamp(8rem, 30vw, 24rem);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.05em;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--border);
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+}
+.work-head, .work-desc, .work-tags { position: relative; z-index: 1; }
 
 .work-head { grid-column: 1; }
-.work-num { color: var(--accent); display: block; margin-bottom: 0.75rem; }
-.work h3 { font-size: 1.5rem; font-weight: 600; line-height: 1.2; }
-.work-client { color: var(--text-muted); margin-top: 0.5rem; }
+.work-num { color: var(--accent); display: block; margin-bottom: 1rem; }
+.work h3 {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 4.5vw, 3.5rem);
+  font-weight: 600; line-height: 1.05; letter-spacing: -0.02em;
+}
+.work-client { color: var(--text-muted); margin-top: 1rem; }
 
-.work-desc { grid-column: 2; color: var(--text-muted); align-self: start; }
+.work-desc { grid-column: 2; color: var(--text-muted); font-size: 1.125rem; }
 
 .work-tags {
   grid-column: 1 / -1;
   list-style: none;
   display: flex; flex-wrap: wrap; gap: 0.5rem;
-  margin-top: 0.5rem;
+  margin-top: 1.5rem;
 }
 .work-tags li {
   border: 1px solid var(--border);
@@ -231,8 +267,9 @@ section h2 { font-size: var(--step-h2); font-weight: 600; letter-spacing: -0.02e
 }
 
 @media (max-width: 760px) {
-  .work { grid-template-columns: 1fr; }
+  .work-inner { grid-template-columns: 1fr; align-items: start; }
   .work-desc { grid-column: 1; }
+  .work-bignum { top: 5rem; margin-top: 0; }
 }
 
 /* --- Contact --- */
@@ -287,3 +324,51 @@ footer { border-top: 1px solid var(--border); padding-block: 1.5rem; margin-top:
 @media (max-width: 760px) {
   .contact-grid, .form-row { grid-template-columns: 1fr; }
 }
+/* --- Custom cursor (dot + trailing ring) ---
+   Only active when JS adds .has-custom-cursor (fine pointer devices). */
+.has-custom-cursor,
+.has-custom-cursor * { cursor: none !important; }
+.has-custom-cursor input,
+.has-custom-cursor textarea { cursor: text !important; }
+
+.cursor-dot,
+.cursor-ring {
+  position: fixed;
+  top: 0; left: 0;
+  pointer-events: none;
+  z-index: 9999;
+  border-radius: 50%;
+  opacity: 0;
+  will-change: transform;
+}
+.cursor-dot {
+  width: 6px; height: 6px;
+  margin: -3px 0 0 -3px;
+  background: var(--accent);
+  transition: opacity 0.2s ease, width 0.2s ease, height 0.2s ease, margin 0.2s ease;
+}
+.cursor-ring {
+  width: 36px; height: 36px;
+  margin: -18px 0 0 -18px;
+  border: 1.5px solid var(--accent);
+  transition: opacity 0.2s ease, width 0.25s ease, height 0.25s ease, margin 0.25s ease,
+              background-color 0.25s ease, border-color 0.25s ease;
+}
+
+.cursor-visible .cursor-dot { opacity: 1; }
+.cursor-visible .cursor-ring { opacity: 0.6; }
+
+/* Hovering links / buttons: ring expands and fills softly, dot shrinks */
+.cursor-hover .cursor-ring {
+  width: 56px; height: 56px; margin: -28px 0 0 -28px;
+  background-color: color-mix(in srgb, var(--accent) 12%, transparent);
+  opacity: 1;
+}
+.cursor-hover .cursor-dot { width: 4px; height: 4px; margin: -2px 0 0 -2px; }
+
+/* Mouse down: ring tightens */
+.cursor-down .cursor-ring { width: 26px; height: 26px; margin: -13px 0 0 -13px; }
+
+/* Over text fields: hand back to the native I-beam */
+.cursor-text .cursor-dot,
+.cursor-text .cursor-ring { opacity: 0; }
